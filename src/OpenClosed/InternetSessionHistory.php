@@ -6,55 +6,22 @@ namespace Sourabh\DesignPrinciples\OpenClosed;
 
 use DateTime;
 
-class InternetSession
+class InternetSessionHistory
 {
-    /** @var DateTime */
-    private $begin;
+    /** @var InternetSession[] */
+    private static $sessions;
 
-    /** @var int */
-    private $dataUsed;
-
-    /** @var int */
-    private $subscriberId;
-
-    public function __construct(int $subscriberId, DateTime $begin, int $dataUsed)
+    public static function getCurrentsessions(int $subscriberId): array
     {
-        $this->begin = $begin;
-        $this->dataUsed = $dataUsed;
-        $this->subscriberId = $subscriberId;
+        if (!self::$sessions[$subscriberId]) {
+            return [];
+        }
+
+        return self::$sessions[$subscriberId];
     }
 
-    public function getBegin(): DateTime
+    public static function addSession(int $subscriberId, DateTime $begin, int $duration): void
     {
-        return $this->begin;
-    }
-
-    public function getDataUsed(): int
-    {
-        return $this->duration;
-    }
-
-    public function getSubscriberId(): int
-    {
-        return $this->subscriberId;
+        self::$sessions[$subscriberId][] = new Call($subscriberId, $begin, $duration);
     }
 }
- class InternetSessionHistory
- {
-     /** @var InternetSession[] */
-     private static $sessions;
-
-     public static function getCurrentsessions(int $subscriberId): array
-     {
-         if (!self::$sessions[$subscriberId]) {
-             return [];
-         }
-
-         return self::$sessions[$subscriberId];
-     }
-
-     public static function addSession(int $subscriberId, DateTime $begin, int $duration): void
-     {
-         self::$sessions[$subscriberId][] = new Call($subscriberId, $begin, $duration);
-     }
- }
