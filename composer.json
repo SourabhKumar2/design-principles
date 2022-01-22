@@ -6,5 +6,10 @@
             "Sourabh\\DesignPrinciples\\": "src/"
         }
     },
-    "require": {}
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4"
+    },
+    "scripts": {
+        "lint": "php-cs-fixer fix src --rules=@PSR12 -v"
+    }
 }
