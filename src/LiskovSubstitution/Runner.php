@@ -20,7 +20,6 @@ class Runner implements RunnerInterface
 
         $this->useRectangle($rectangle);
 
-        $this->useRectangle($square);
         echo 'Done testing Liskov Substitution....' . PHP_EOL;
     }
 

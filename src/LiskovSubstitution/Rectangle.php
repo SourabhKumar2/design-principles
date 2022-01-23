@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Sourabh\DesignPrinciples\LiskovSubstitution;
 
-class Rectangle
+class Rectangle implements ShapeInterface
 {
     /** @var int */
     private $width;

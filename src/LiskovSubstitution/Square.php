@@ -4,26 +4,28 @@ declare(strict_types=1);
 
 namespace Sourabh\DesignPrinciples\LiskovSubstitution;
 
-class Square extends Rectangle
+class Square implements ShapeInterface
 {
+    /** @var int */
+    private $side;
+
     public function __construct(int $side)
     {
-        parent::__construct($side, $side);
+        $this->side = $side;
     }
 
-    public function setWidth(int $width): void
+    public function getSide(): int
     {
-        $this->setSide($width);
-    }
-
-    public function setHeight(int $height): void
-    {
-        $this->setSide($height);
+        return $this->side;
     }
 
     public function setSide(int $side): void
     {
-        parent::setWidth($side);
-        parent::setHeight($side);
+        $this->side = $side;
+    }
+
+    public function computeArea(): int
+    {
+        return $this->getSide() * $this->getSide();
     }
 }
