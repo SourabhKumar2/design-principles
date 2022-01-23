@@ -14,6 +14,4 @@ interface PersistenceService
     public function delete(Entity $entity): void;
 
     public function findById(int $id): Entity;
-
-    public function findByName(string $name): array;
 }
