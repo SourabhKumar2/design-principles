@@ -20,6 +20,11 @@ class UserWebDTO implements UserDTO
         $this->age = $age;
     }
 
+    public function __toString()
+    {
+        return 'name=' . $this->name . "\nage=" . $this->age . "\naddress=" . $this->address;
+    }
+
     /**
      * Get the value of name.
      */

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Sourabh\DesignPrinciples\Creational\Builder;
 
+use DateTime;
+
 //Abstract builder
 interface UserDTOBuilder
 {
@@ -12,9 +14,9 @@ interface UserDTOBuilder
 
     public function withLastName(string $lname): UserDTOBuilder;
 
-    public function withBirthday(string $date): UserDTOBuilder;
+    public function withBirthday(DateTime $date): UserDTOBuilder;
 
-    public function withAddress(string $address): UserDTOBuilder;
+    public function withAddress(Address $address): UserDTOBuilder;
 
     //method to "assemble" final product
     public function build(): UserDTO;
