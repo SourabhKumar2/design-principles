@@ -10,9 +10,17 @@ class Client implements RunnerInterface
 {
     public function run(): void
     {
+        echo 'Testing Factory Method.....' . PHP_EOL;
+
+        $this->printMessage(new JSONMessageCreator());
+        $this->printMessage(new TextMessageCreator());
+
+        echo 'Done testing Factory Method....' . PHP_EOL;
     }
 
-    public static function printMessage(MessageCreator $creator): void
+    public function printMessage(MessageCreator $creator): void
     {
+        $message = $creator->getMessage();
+        echo $message->getContent() . PHP_EOL;
     }
 }
