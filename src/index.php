@@ -7,6 +7,7 @@ namespace Sourabh\DesignPrinciples;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Sourabh\DesignPrinciples\Creational\Builder\Client as BuilderRunner;
+use Sourabh\DesignPrinciples\Creational\SimpleFactory\Client as SimpleFactoryRunner;
 use Sourabh\DesignPrinciples\LiskovSubstitution\Runner as LiskovSubstitutionRunner;
 use Sourabh\DesignPrinciples\SRP\Runner as SRPRunner;
 
@@ -14,6 +15,7 @@ $runners = [
     new SRPRunner(),
     new LiskovSubstitutionRunner(),
     new BuilderRunner(),
+    new SimpleFactoryRunner(),
 ];
 
 /** @var RunnerInterface $runner */
