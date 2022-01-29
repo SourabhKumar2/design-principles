@@ -16,6 +16,6 @@ class Client implements RunnerInterface
         echo get_class(PostFactory::createPost('news')) . PHP_EOL;
         echo get_class(PostFactory::createPost('product')) . PHP_EOL;
 
-		echo 'Done testing Simple Factory....' . PHP_EOL;
+        echo 'Done testing Simple Factory....' . PHP_EOL;
     }
 }
