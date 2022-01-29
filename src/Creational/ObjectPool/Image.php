@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Sourabh\DesignPrinciples\Creational\ObjectPool;
 
-interface Image
+interface Image extends Poolable
 {
     public function draw(): void;
 

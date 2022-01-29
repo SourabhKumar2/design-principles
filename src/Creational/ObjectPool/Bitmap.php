@@ -18,7 +18,7 @@ class Bitmap implements Image
 
     public function draw(): void
     {
-        echo 'Drawing ' . $this->name . ' @ ' . $this->location;
+        echo 'Drawing ' . $this->name . ' @ ' . $this->location. PHP_EOL;
     }
 
     public function getLocation(): Point2D
@@ -29,5 +29,11 @@ class Bitmap implements Image
     public function setLocation(Point2D $location): void
     {
         $this->location = $location;
+    }
+
+    public function reset(): void
+    {
+        $this->location = null;
+        echo 'Bitmap is reset' . PHP_EOL;
     }
 }

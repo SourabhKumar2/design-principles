@@ -6,4 +6,5 @@ namespace Sourabh\DesignPrinciples\Creational\ObjectPool;
 
 interface Poolable
 {
+    public function reset(): void;
 }
